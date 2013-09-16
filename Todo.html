@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>To do List</title>
+<script>
+    var i = 1;
+    function addItem(id) {
+        var wrapper = document.getElementById('wrapper');
+        var buffer = ["<p id ='"  + i + "' onclick =" + "removeItem(" + i + ")" + ">" + id.value + "</p>"];
+        wrapper.innerHTML = buffer += wrapper.innerHTML;
+        document.getElementById('item').value = null;
+        i++;
+    }
+
+
+    function removeItem(i) {
+        var element = document.getElementById(i);
+        element.parentNode.removeChild(element);
+    }
+</script>
+</head>
+<body>
+<h1>To do list</h1>
+<input name="textbox1" id="item" type="text" />
+<input name="button" type="button" value="Click to add list item" onclick="addItem(document.getElementById('item'));">
+<p id ="wrapper">
+</p>
+</body>
+</html>
